@@ -1,69 +1,84 @@
-# React + TypeScript + Vite
+# PumpMaster
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PumpMaster is a React + TypeScript web application for managing industrial pumps, offering core features like filtering, editing, and pagination. 
+It is designed as a modular and testable frontend module, easily integratable into larger industrial systems.
 
-Currently, two official plugins are available:
+<!-- 🔗 Live Demo: _(Coming soon)_ -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 1. Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework**: React (TypeScript)
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS, [shadcn/ui](https://ui.shadcn.com/) (based on Radix UI)
+- **State Management**: Zustand
+- **Testing**: Vitest + Testing Library
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 2. Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### ✅ Pump Management
+- View pump list with name, type, area, and status
+- Edit or delete pump records via modal dialog
+- Create new pump entries with validation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 🔍 Filtering & Pagination
+- Search pumps by name
+- Filter by pump type and area using custom dropdowns
+- Client-side pagination for better performance on large datasets
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 3. Testing Coverage
+Includes both **unit** and **integration** tests with custom patching to support Radix UI behaviors in JSDOM.
+
+
+### Unit Tests
+- `FilterSelect` (custom dropdown)
+- `DeletePumpDialog`
+- Zustand stores (`pumpStore`, `pumpSelectionStore`)
+
+### Integration Tests
+- `PumpFilter`: combined filtering behavior
+- `PumpActions`: add/edit/delete flows
+- `PumpOverview`: layout & data propagation
+- `CreateEditPumpDialog`
+- `CustomPagination`
+
+
+## 4. Installation and Setup
+```bash
+# Clone repository
+git clone https://github.com/your-username/pump-master.git
+cd pump-master
+
+# Install Dependencies
+pnpm install   # or npm install
+
+# Start the Dev Server
+pnpm dev       # or npm run dev
+
+# Run Tests
+npx vitest run
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 5. Contributing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Contributions via issues and pull requests are welcome.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Note for contributors:**
+
+- This project uses `pnpm` (or `npm`) for dependency management.
+- Please make sure all tests pass before submitting a PR:
+
+## 6. License
+
+This project is licensed under the MIT License.  
+You are free to use, modify, and distribute this software under the terms of the license.
+
+
+## 7. Learn More
+
+- [React Documentation](https://react.dev/)
+- [TypeScript Docs](https://www.typescriptlang.org/docs/)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Vitest](https://vitest.dev/)
+- [Testing Library](https://testing-library.com/docs/)
+- [Zustand](https://github.com/pmndrs/zustand)
