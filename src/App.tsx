@@ -1,13 +1,15 @@
-function App() {
+import { BrowserRouter, useRoutes } from "react-router-dom";
+import { routes } from "@/routes";
 
-  return (
-    <>
-      <div className='bg-green-600'>
-        <h1 className="text-secondary">Hello</h1>
-        <h1 className="text-primary">Hello</h1>
-      </div>
-    </>
-  )
+function AppRoutes() {
+  const element = useRoutes(routes);
+  return element;
 }
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
+}

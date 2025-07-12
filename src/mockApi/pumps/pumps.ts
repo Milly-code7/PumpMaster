@@ -12,6 +12,7 @@ import type { PumpRes } from "@/interfaces/Pumps/PumpRes";
 import type { UpdatePumpDTO } from "@/interfaces/Pumps/UpdatePumpDTO";
 import { PumpStatus } from "@/enums/Pumps/PumpStatus";
 
+
 const useMock = true;
 
 export async function getPumpList(params: PumpReq): Promise<PumpRes> {
@@ -52,7 +53,7 @@ export async function getPumpList(params: PumpReq): Promise<PumpRes> {
     };
   }
 
-  // if use real
+  // real
   const filteredParams = Object.entries(params).reduce((acc, [key, value]) => {
     if (value !== undefined && value !== "") {
       acc[key as keyof PumpReq] = value;
@@ -63,6 +64,7 @@ export async function getPumpList(params: PumpReq): Promise<PumpRes> {
   const response = await apiClient.get(url.getPumpList, { params: filteredParams });
   return response.data;
 }
+
 
 export async function createPump(dto: CreatePumpDTO): Promise<IPump> {
   const newPump: IPump = {
@@ -117,6 +119,7 @@ export async function deletePump(pumpId: string): Promise<boolean> {
     if (index !== -1) {
       mockPumpList.items.splice(index, 1);
     }
+
 
     delete mockPumpDetailMap[pumpId];
 

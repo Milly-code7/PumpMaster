@@ -5,8 +5,10 @@ import type { PumpArea } from "@/enums/Pumps/PumpArea";
 
 export interface PumpDetailRes {
 	pumpId: string;
+	pumpName: string;
 	status: PumpStatus;
-	lastUpdated: Date;
+	createdAt: Date;
+	updatedAt?: Date;
 
 	pumpType: PumpType;
 	pumpArea: PumpArea;

@@ -3,6 +3,7 @@ import type { PumpType } from "@/enums/Pumps/PumpType";
 
 export interface IPump {
     pumpId: string;
+    pumpName: string;
     pumpType: PumpType;        
     pumpArea: PumpArea;         
     latitude: number;
