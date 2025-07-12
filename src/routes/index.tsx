@@ -1,4 +1,3 @@
-// routes/index.tsx
 import { lazy } from "react";
 import ProtectedRoute from "./ProtectedRoute";
 import MainLayout from "@/layouts/MainLayout";

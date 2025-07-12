@@ -25,13 +25,14 @@ export default function PumpFilter() {
   return (
     <div className="flex flex-wrap gap-3 items-center">
       <Input
-        placeholder="Search Pump Name or ID"
+        placeholder="Search Pump Name"
         value={pumpFilter.search ?? ""}
         onChange={(e) => setPumpFilter({ search: e.target.value })}
         className="w-[200px]"
       />
 
       <FilterSelect
+        ariaLabel="Pump Type"
         value={pumpFilter.pumpType}
         placeholder="Pump Type"
         options={PumpTypeOptions}
@@ -39,6 +40,7 @@ export default function PumpFilter() {
       />
 
       <FilterSelect
+        ariaLabel="Pump Area"
         value={pumpFilter.pumpArea}
         placeholder="Pump Area"
         options={PumpAreaOptions}

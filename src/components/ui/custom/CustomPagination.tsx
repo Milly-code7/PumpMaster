@@ -20,6 +20,7 @@ export default function CustomPagination({
         disabled={currentPage <= 1}
         onClick={() => onPageChange(currentPage - 1)}
         className="rounded-full"
+        aria-label="Previous Page"
       >
         <ChevronLeft className="w-5 h-5" />
       </Button>
@@ -34,6 +35,7 @@ export default function CustomPagination({
         disabled={currentPage >= totalPages}
         onClick={() => onPageChange(currentPage + 1)}
         className="rounded-full"
+        aria-label="Next Page"
       >
         <ChevronRight className="w-5 h-5" />
       </Button>
