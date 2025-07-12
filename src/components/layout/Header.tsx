@@ -43,30 +43,25 @@ export default function TopNavBar() {
       </div>
 
       <div className="flex items-center gap-4">
-        {/* Search for md+ */}
         <input
           type="text"
           placeholder="Search"
           className="hidden md:block px-3 py-1.5 border rounded-lg text-sm bg-gray-100 placeholder-gray-400"
         />
 
-        {/* Notification */}
         <div className="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center">
           <Bell className="w-5 h-5 text-gray-700" />
         </div>
 
-        {/* Profile */}
         <div className="w-9 h-9 rounded-full bg-black text-white text-xs flex items-center justify-center">
           SC
         </div>
 
-        {/* Hamburger */}
         <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           <Menu className="w-6 h-6 text-gray-700" />
         </button>
       </div>
 
-      {/* Mobile Nav */}
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-white border-t mt-2 shadow-md md:hidden px-6 py-3">
           {navItems.map((item) =>
