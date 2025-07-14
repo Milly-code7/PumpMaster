@@ -50,8 +50,8 @@ Includes both **unit** and **integration** tests with custom patching to support
 # npm install -g pnpm
 
 # Clone the repository
-git clone https://github.com/your-username/pump-master.git
-cd pump-master
+git clone https://github.com/Milly-code7/PumpMaster.git
+cd PumpMaster
 
 # Install dependencies (choose one)
 npm install
