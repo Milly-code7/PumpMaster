@@ -19,6 +19,7 @@ It is designed as a modular and testable frontend module, easily integratable in
 - View pump list with name, type, area, and status
 - Edit or delete pump records via modal dialog
 - Create new pump entries with validation
+- The Pump Detail view is currently a placeholder and may not be fully functional yet.
 
 ### 🔍 Filtering & Pagination
 - Search pumps by name
@@ -44,17 +45,23 @@ Includes both **unit** and **integration** tests with custom patching to support
 
 ## 4. Installation and Setup
 ```bash
-# Clone repository
+# Prerequisite: Node.js v22.x (LTS) – confirm with `node -v`
+# You may use npm or pnpm. If using pnpm, install it first:
+# npm install -g pnpm
+
+# Clone the repository
 git clone https://github.com/your-username/pump-master.git
 cd pump-master
 
-# Install Dependencies
-pnpm install   # or npm install
+# Install dependencies (choose one)
+npm install
+# or
+pnpm install
 
-# Start the Dev Server
-pnpm dev       # or npm run dev
+# Start the development server
+npm run dev
 
-# Run Tests
+# Run unit and integration tests
 npx vitest run
 ```
 
